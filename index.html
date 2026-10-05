@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="es">
 
@@ -11,9 +10,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>
-    Portal ANED
-  </title>
+  <title>Portal ANED</title>
 
 
   <style>
@@ -27,7 +24,6 @@
       margin: 0;
       padding: 0;
     }
-
 
     body {
 
@@ -454,7 +450,7 @@
 
 
     <!-- ===================================================
-         TALLER DE LIDERAZGO
+         MÓDULO 1
          =================================================== -->
 
     <button
@@ -468,7 +464,7 @@
 
 
     <!-- ===================================================
-         MANEJO SEGURO DE ALIMENTOS
+         MÓDULO 2
          =================================================== -->
 
     <button
@@ -477,6 +473,20 @@
     >
 
       ANED_ Manejo Seguro de Alimentos
+
+    </button>
+
+
+    <!-- ===================================================
+         MÓDULO 3
+         =================================================== -->
+
+    <button
+      class="tab"
+      onclick="cargarDashboard(2)"
+    >
+
+      Ale_ Actividades de Mantenimiento
 
     </button>
 
@@ -498,6 +508,10 @@
 
         <option value="1">
           ANED_ Manejo Seguro de Alimentos
+        </option>
+
+        <option value="2">
+          Ale_ Actividades de Mantenimiento
         </option>
 
       </select>
@@ -565,7 +579,12 @@
 
       /* 1 - Manejo Seguro de Alimentos */
 
-      "https://oswaldoayala13.github.io/ANED_Manejo-de-Seguro-de-alimentos/"
+      "https://oswaldoayala13.github.io/ANED_Manejo-de-Seguro-de-alimentos/",
+
+
+      /* 2 - Actividades de Mantenimiento */
+
+      "https://oswaldoayala13.github.io/ANED_ALE-ACTIVIDADES-DE-MANTENIMIENTO/"
 
     ];
 
@@ -596,7 +615,6 @@
 
     function cargarDashboard(indice) {
 
-
       indice = Number(indice);
 
 
@@ -618,9 +636,9 @@
 
 
       /*
-       * Agregamos un parámetro de versión
-       * para evitar que el navegador conserve
-       * una versión antigua del dashboard.
+       * Parámetro de versión para evitar
+       * que el navegador conserve una
+       * versión antigua del dashboard.
        */
 
       const separador =
@@ -691,20 +709,3 @@
 </body>
 
 </html>
-```
-
-### Una ventaja que le puse a este portal
-
-A diferencia del portal anterior, aquí incorporé desde el inicio el mecanismo para evitar el problema que acabamos de detectar con las versiones antiguas.
-
-Cuando seleccionas un dashboard, el portal agrega automáticamente:
-
-```text
-?v=XXXXXXXX
-```
-
-al enlace. Así, si posteriormente actualizas cualquiera de los dos dashboards de ANED, el portal solicitará nuevamente el contenido y reducimos mucho el riesgo de que el navegador te presente una versión anterior.
-
-Los dos destinos que quedan integrados son exactamente los que me proporcionaste y que pude abrir correctamente.
-
-**Nombre sugerido para este nuevo repositorio:** `PORTAL_ANED` y dentro solamente necesitarías colocar este `index.html` en la raíz para publicarlo con GitHub Pages.
