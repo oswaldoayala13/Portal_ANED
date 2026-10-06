@@ -5,9 +5,13 @@
 
   <meta charset="UTF-8">
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
 
   <title>Portal ANED</title>
+
 
   <style>
 
@@ -22,9 +26,16 @@
     }
 
     body {
-      font-family: Arial, Helvetica, sans-serif;
+
+      font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
       background: #f4f6f8;
+
       overflow: hidden;
+
     }
 
 
@@ -34,7 +45,7 @@
 
     .header {
 
-      height: 90px;
+      height: 92px;
 
       background: #E85D3F;
 
@@ -46,41 +57,78 @@
 
       justify-content: center;
 
-      text-align: center;
+      padding: 10px 25px;
 
-      padding: 15px;
+      box-shadow:
+        0 2px 6px rgba(0,0,0,0.20);
+
+      position: relative;
+
+      z-index: 10;
 
     }
 
-    .header h1 {
 
-      font-size: 25px;
+    .title-area {
+
+      width: 100%;
+
+      text-align: center;
+
+    }
+
+
+    .title-area h1 {
+
+      font-size: 24px;
+
+      line-height: 1.25;
 
       font-weight: 700;
+
+      max-width: 1400px;
+
+      margin: auto;
+
+    }
+
+
+    .title-area p {
+
+      margin-top: 6px;
+
+      font-size: 14px;
+
+      opacity: 0.95;
 
     }
 
 
     /* =====================================================
-       NAVEGACIÓN
+       BARRA DE MÓDULOS
        ===================================================== */
 
     .navigation {
 
-      height: 65px;
+      height: 64px;
 
-      background: white;
+      background: #ffffff;
 
       display: flex;
 
-      justify-content: center;
-
       align-items: center;
 
-      border-bottom: 1px solid #ddd;
+      justify-content: center;
+
+      border-bottom:
+        1px solid #ddd;
 
       box-shadow:
-        0 1px 4px rgba(0,0,0,0.10);
+        0 1px 3px rgba(0,0,0,0.08);
+
+      position: relative;
+
+      z-index: 8;
 
       overflow-x: auto;
 
@@ -91,32 +139,34 @@
 
       height: 100%;
 
-      padding: 0 30px;
+      padding: 0 28px;
 
       border: none;
 
-      background: white;
+      background: transparent;
+
+      color: #555;
 
       font-size: 15px;
 
       font-weight: bold;
 
-      color: #555;
-
       cursor: pointer;
 
-      border-bottom: 4px solid transparent;
+      border-bottom:
+        4px solid transparent;
 
       white-space: nowrap;
 
-      transition: all 0.2s ease;
+      transition:
+        all 0.2s ease;
 
     }
 
 
     .tab:hover {
 
-      background: #fff5f2;
+      background: #f5f5f5;
 
       color: #E85D3F;
 
@@ -127,7 +177,8 @@
 
       color: #E85D3F;
 
-      border-bottom: 4px solid #E85D3F;
+      border-bottom:
+        4px solid #E85D3F;
 
       background: #fff7f5;
 
@@ -135,22 +186,32 @@
 
 
     /* =====================================================
-       SELECTOR PARA CELULAR
+       SELECTOR MÓVIL
        ===================================================== */
 
-    .mobile-select {
+    .selector {
 
       display: none;
 
       width: 100%;
 
+      padding: 8px 15px;
+
+    }
+
+
+    .selector select {
+
+      width: 100%;
+
       padding: 10px;
 
-      font-size: 14px;
-
-      border: 1px solid #ccc;
+      border:
+        1px solid #ccc;
 
       border-radius: 6px;
+
+      font-size: 14px;
 
       background: white;
 
@@ -163,11 +224,14 @@
 
     .viewer {
 
+      position: relative;
+
       width: 100%;
 
-      height: calc(100vh - 155px);
+      height:
+        calc(100vh - 156px);
 
-      background: white;
+      background: #ffffff;
 
     }
 
@@ -182,6 +246,80 @@
 
       display: block;
 
+      background: white;
+
+    }
+
+
+    /* =====================================================
+       PANTALLA DE CARGA
+       ===================================================== */
+
+    .loading {
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        rgba(255,255,255,0.90);
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: center;
+
+      align-items: center;
+
+      z-index: 5;
+
+    }
+
+
+    .spinner {
+
+      width: 45px;
+
+      height: 45px;
+
+      border:
+        5px solid #ddd;
+
+      border-top:
+        5px solid #E85D3F;
+
+      border-radius: 50%;
+
+      animation:
+        spin 1s linear infinite;
+
+      margin-bottom: 15px;
+
+    }
+
+
+    .loading-text {
+
+      color: #555;
+
+      font-size: 14px;
+
+      font-weight: bold;
+
+    }
+
+
+    @keyframes spin {
+
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+
     }
 
 
@@ -189,44 +327,75 @@
        RESPONSIVE
        ===================================================== */
 
-    @media (max-width: 768px) {
+    @media (max-width: 900px) {
 
-      body {
-        overflow: auto;
-      }
-
-
-      .header {
-
-        height: 80px;
-
-      }
-
-
-      .header h1 {
+      .title-area h1 {
 
         font-size: 20px;
 
       }
 
 
-      .navigation {
+      .tab {
 
-        height: 65px;
+        padding: 0 18px;
 
-        padding: 8px 12px;
+        font-size: 13px;
+
+      }
+
+    }
+
+
+    @media (max-width: 768px) {
+
+      body {
+
+        overflow: auto;
 
       }
 
 
-      .tab {
+      .header {
+
+        height: auto;
+
+        min-height: 90px;
+
+        padding: 15px;
+
+      }
+
+
+      .title-area h1 {
+
+        font-size: 17px;
+
+      }
+
+
+      .title-area p {
+
+        font-size: 12px;
+
+      }
+
+
+      .navigation {
+
+        height: 60px;
+
+      }
+
+
+      .navigation .tab {
 
         display: none;
 
       }
 
 
-      .mobile-select {
+      .navigation .selector {
 
         display: block;
 
@@ -235,7 +404,8 @@
 
       .viewer {
 
-        height: calc(100vh - 145px);
+        height:
+          calc(100vh - 150px);
 
         min-height: 500px;
 
@@ -257,9 +427,17 @@
 
   <header class="header">
 
-    <h1>
-      Portal ANED
-    </h1>
+    <div class="title-area">
+
+      <h1>
+        Portal ANED
+      </h1>
+
+      <p>
+        Panel de seguimiento y análisis de actividades
+      </p>
+
+    </div>
 
   </header>
 
@@ -314,28 +492,31 @@
 
 
     <!-- ===================================================
-         SELECTOR MÓVIL
+         SELECTOR PARA MÓVIL
          =================================================== -->
 
-    <select
-      id="mobileSelect"
-      class="mobile-select"
-      onchange="cargarDashboard(this.value)"
-    >
+    <div class="selector">
 
-      <option value="0">
-        ANED_ Taller de Liderazgo Docente
-      </option>
+      <select
+        id="dashboardSelect"
+        onchange="cargarDashboard(this.value)"
+      >
 
-      <option value="1">
-        ANED_ Manejo Seguro de Alimentos
-      </option>
+        <option value="0">
+          ANED_ Taller de Liderazgo Docente
+        </option>
 
-      <option value="2">
-        Ale_ Actividades de Mantenimiento
-      </option>
+        <option value="1">
+          ANED_ Manejo Seguro de Alimentos
+        </option>
 
-    </select>
+        <option value="2">
+          Ale_ Actividades de Mantenimiento
+        </option>
+
+      </select>
+
+    </div>
 
   </nav>
 
@@ -346,11 +527,34 @@
 
   <main class="viewer">
 
+
+    <!-- ===================================================
+         CARGANDO
+         =================================================== -->
+
+    <div
+      class="loading"
+      id="loading"
+    >
+
+      <div class="spinner"></div>
+
+      <div class="loading-text">
+        Cargando dashboard...
+      </div>
+
+    </div>
+
+
+    <!-- ===================================================
+         IFRAME
+         =================================================== -->
+
     <iframe
       id="dashboard"
-      src="https://oswaldoayala13.github.io/ANED_Taller_Liderazgo_Docente/"
-      title="Portal ANED"
-    ></iframe>
+      title="Dashboard ANED"
+    >
+    </iframe>
 
   </main>
 
@@ -361,8 +565,9 @@
 
   <script>
 
+
     /* =====================================================
-       URL DE LOS DASHBOARDS
+       ENLACES DE LOS DASHBOARDS
        ===================================================== */
 
     const dashboards = [
@@ -385,23 +590,27 @@
 
 
     /* =====================================================
-       ELEMENTOS
+       ELEMENTOS DE LA PÁGINA
        ===================================================== */
 
     const iframe =
       document.getElementById("dashboard");
 
 
+    const loading =
+      document.getElementById("loading");
+
+
     const tabs =
       document.querySelectorAll(".tab");
 
 
-    const mobileSelect =
-      document.getElementById("mobileSelect");
+    const selector =
+      document.getElementById("dashboardSelect");
 
 
     /* =====================================================
-       FUNCIÓN PARA CARGAR DASHBOARD
+       CARGAR DASHBOARD
        ===================================================== */
 
     function cargarDashboard(indice) {
@@ -421,16 +630,34 @@
       }
 
 
-      /* Cargar dashboard */
+      /* Mostrar pantalla de carga */
+
+      loading.style.display = "flex";
+
+
+      /*
+       * Parámetro de versión para evitar
+       * que el navegador conserve una
+       * versión antigua del dashboard.
+       */
+
+      const separador =
+        dashboards[indice].includes("?")
+          ? "&"
+          : "?";
+
 
       iframe.src =
-        dashboards[indice];
+        dashboards[indice]
+        + separador
+        + "v="
+        + Date.now();
 
 
       /* Actualizar pestaña activa */
 
       tabs.forEach(
-        function(tab, i) {
+        (tab, i) => {
 
           if (i === indice) {
 
@@ -448,10 +675,32 @@
 
       /* Actualizar selector móvil */
 
-      mobileSelect.value =
+      selector.value =
         indice;
 
     }
+
+
+    /* =====================================================
+       CUANDO TERMINA DE CARGAR EL IFRAME
+       ===================================================== */
+
+    iframe.addEventListener(
+      "load",
+      function() {
+
+        loading.style.display =
+          "none";
+
+      }
+    );
+
+
+    /* =====================================================
+       CARGA INICIAL
+       ===================================================== */
+
+    cargarDashboard(0);
 
 
   </script>
